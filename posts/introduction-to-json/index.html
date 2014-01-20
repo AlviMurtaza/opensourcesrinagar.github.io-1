@@ -1,0 +1,115 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><link href="/styles/screen.css" rel="stylesheet"><link href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css"><title>Introduction to JSON</title><meta name="description" content="Introduction to JSON and how it can be used."></head><body><header><div class="header-inner"><nav class="main-nav"><ul class="nav-links"><li><a href="/about.html">About</a></li><li><a href="/classes.html">Classes</a></li><!-- li.logo--><!--   a(href="#{data.baseUrl}")--><!--     img(src="../images/logo.png", alt="Open Source Srinagar")--><li><a href="/interviews.html">Interviews</a></li><li><a href="/blog.html">Blog</a></li></ul></nav></div></header><div class="content"><div class="pages post"><div class="posts"><div class="post-head group"><a href="/posts/introduction-to-json/"><h3 class="post-title">Introduction to JSON</h3></a><div class="meta">Posted by &nbsp;<span class="author">Alvi Murtaza</span>&nbsp; on &nbsp;<span class="post-date">2014-1-10</span></div></div><div class="post-body markdown"><p>JSON is a lightweight data format designed to easily represent complex data structures. A JSON document is a file containing a single JavaScript object or array, which in turn contains any number of other objects, arrays, strings, numbers, booleans, or null values.</p>
+<p>JSON&#39;s popularity is on rise because the data can be parsed into a usable object in JavaScript. This property acts as a bonus in contrast to XML, that parsed data into a DOM document, making extraction of data a bit of hardwork for JavaScript developers. Lets consider a code snippet for getting a property from an array of objects in which we consider the said array contains the properties of people. The typical walk through a DOM structure will look like:</p>
+<pre><code><div class="highlight"><pre><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;person&quot;</span><span class="p">)[</span><span class="mi">3</span><span class="p">].</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">)</span>
+</pre></div>
+</code></pre>
+<p>In comparison to this using JSON the syntax will look similar to:</p>
+<pre><code><div class="highlight"><pre><span class="nx">object_name</span><span class="p">[</span><span class="nx">array_indentation</span><span class="p">].</span><span class="nx">property</span>
+</pre></div>
+</code></pre>
+<p>and the same example will be as simple as:</p>
+<pre><code><div class="highlight"><pre><span class="nx">person</span><span class="p">[</span><span class="mi">3</span><span class="p">].</span><span class="nx">name</span>
+</pre></div>
+</code></pre>
+<p>The example code will simply point to the fourth person&#39;s name in the array.</p>
+<p>The most important thing to understand about JSON is that it is a data format, not a programming language. JSON is not part of JavaScript even though they share syntax with each other. In JSON the syntax allows three types of values:</p>
+<ul>
+<li>Simple Values</li>
+<li>Objects</li>
+<li>Arrays</li>
+<li>Incase of Simple values we can consider any number like 10, 20, 100 as valid JSON. In the same manner &quot;Foobar&quot; or similar strings are JSON as well as &quot;JavaScript Strings&quot; except single quoted &#39;foobar&#39; is a JavaScript string but it is an error for JSON.</li>
+<li>Objects in JSON are represented with a slight increment in Object Literal Notations. You would be already familiar with the JavaScript Object literal syntax, so let us focus on JSON first and then we can check how the same code is written in JavaScript.</li>
+</ul>
+<p>Example code snippet for JSON object:</p>
+<pre><code class="lang-json"><div class="highlight"><pre><span class="p">{</span>
+    <span class="nt">&quot;topic&quot;</span><span class="p">:</span> <span class="s2">&quot;JSON_and_JS&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;Murtaza&quot;</span>
+    <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">22</span>
+<span class="p">}</span>
+</pre></div>
+</code></pre>
+<p>The same example in JavaScript is written as:</p>
+<pre><code class="lang-json"><div class="highlight"><pre><span class="err">var</span> <span class="err">person</span> <span class="err">=</span> <span class="p">{</span>
+    <span class="err">topic:</span> <span class="nt">&quot;JSON_and_JS&quot;</span><span class="p">,</span>
+    <span class="err">author:</span> <span class="nt">&quot;Murtaza&quot;</span>
+    <span class="err">age</span><span class="p">:</span> <span class="mi">22</span>
+<span class="p">}</span><span class="err">;</span>
+</pre></div>
+</code></pre>
+<p>You may have noticed the double quotes in JSON example. Unlike JavaScript, object property names in JSON must always be double-quoted. Also there is no variable declaration i.e variables don&#39;t exist in JSON. There is no semicolon at the end of object literal as it is not JavaScript.</p>
+<ul>
+<li>Arrays in JSON are in the same way as they are in JavaScript. An array in JavaScript is written as:</li>
+</ul>
+<pre><code><div class="highlight"><pre><span class="kd">var</span> <span class="nb">Array</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;world&quot;</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="kc">false</span><span class="p">]</span>
+</pre></div>
+</code></pre>
+<p>JSON needs no modification of code in arrays except as already discussed there is no variable declaration. Thus the above code in JSON is represented as:</p>
+<pre><code><div class="highlight"><pre><span class="p">[</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;world&quot;</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="kc">false</span><span class="p">]</span>
+</pre></div>
+</code></pre>
+<h4><a name="convert-javascript-object-to-json-string" class="anchor" href="#convert-javascript-object-to-json-string"><span class="header-link"></span></a>Convert JavaScript object to JSON string</h4>
+<p>To convert JavaScript object to JSON string we can use the JSON.stringify() method.</p>
+<p>Lets consider an example of JavaScript object:</p>
+<pre><code class="lang-json"><div class="highlight"><pre><span class="err">&lt;script</span> <span class="err">type=</span><span class="s2">&quot;text/javascript&quot;</span><span class="err">&gt;</span>
+
+    <span class="err">//</span> <span class="err">Object</span> <span class="err">with</span> <span class="err">an</span> <span class="err">Array</span> <span class="err">and</span> <span class="err">an</span> <span class="err">Object</span>
+    <span class="err">var</span> <span class="err">obj</span> <span class="err">=</span> <span class="p">{</span>
+     <span class="nt">&quot;authors&quot;</span><span class="p">:</span> <span class="p">[</span><span class="err">&#39;bassam&#39;</span><span class="p">,</span> <span class="err">&#39;murtaza&#39;</span><span class="p">],</span>
+     <span class="nt">&quot;site&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="err">&#39;http</span><span class="p">:</span><span class="err">//jsschool.org/&#39;</span><span class="p">,</span> <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="err">&#39;JSON</span> <span class="err">and</span> <span class="err">JavaScript&#39;</span><span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="err">//Convert</span> <span class="err">JS</span> <span class="err">object</span> <span class="err">to</span> <span class="err">JSON</span>
+
+    <span class="err">JSON.stringify(obj);</span>
+
+<span class="err">&lt;/script&gt;</span>
+</pre></div>
+</code></pre>
+<p>This example will create the following result:</p>
+<pre><code class="lang-json"><div class="highlight"><pre><span class="p">{</span><span class="nt">&quot;authors&quot;</span><span class="p">:[</span><span class="s2">&quot;bassam&quot;</span><span class="p">,</span><span class="s2">&quot;murtaza&quot;</span><span class="p">],</span><span class="nt">&quot;site&quot;</span><span class="p">:{</span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="s2">&quot;http://jsschool.org/&quot;</span><span class="p">,</span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;JSON and JavaScript&quot;</span><span class="p">}}</span>
+</pre></div>
+</code></pre>
+<p>We can also convert JSON to a JavaScript Object, Let&#39;s see how it is done:</p>
+<h4><a name="convert-json-string-to-javascript-object" class="anchor" href="#convert-json-string-to-javascript-object"><span class="header-link"></span></a>Convert JSON string to JavaScript object</h4>
+<p>To convert a JSON string into an object, we can use the eval() function. eval() invokes the JavaScript compiler, and since JSON is a proper subset of JavaScript, the compiler will correctly parse the string and produce an object structure. Lets create a JavaScript string containing JSON syntax:</p>
+<pre><code class="lang-json"><div class="highlight"><pre><span class="err">var</span> <span class="err">text</span> <span class="err">=</span> <span class="p">{</span>
+                <span class="nt">&quot;authors&quot;</span><span class="p">:[</span><span class="s2">&quot;bassam&quot;</span><span class="p">,</span><span class="s2">&quot;murtaza&quot;</span><span class="p">],</span>
+                <span class="nt">&quot;site&quot;</span><span class="p">:{</span>
+                        <span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="s2">&quot;http://jsschool.org/&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;JSON and JavaScript&quot;</span>
+                <span class="p">}</span>
+            <span class="p">}</span><span class="err">;</span>
+</pre></div>
+</code></pre>
+<p>Now to convert it we can simply write:</p>
+<pre><code><div class="highlight"><pre><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nb">eval</span> <span class="p">(</span><span class="s2">&quot;(&quot;</span> <span class="o">+</span> <span class="nx">text</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">);</span>
+</pre></div>
+</code></pre>
+<p>The eval function is very fast to convert the JSON string to a JavaScript object. But because the eval() function can compile and execute any JavaScript code added in the string, it represents a potential security problem. It is safer to use a JSON parser, which recognizes only JSON text, rejecting all scripts.</p>
+<p>Thus we write something like this:</p>
+<pre><code><div class="highlight"><pre><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+</pre></div>
+</code></pre>
+<p>if we are using jQuery then we can use:</p>
+<pre><code><div class="highlight"><pre><span class="nx">jQuery</span><span class="p">.</span><span class="nx">parseJSON</span><span class="p">(</span> <span class="nx">text</span> <span class="p">);</span>
+</pre></div>
+</code></pre>
+</div></div><!-- Social sharing icons--><div class="social"><a href="https://twitter.com/share" class="twitter-share-button">Tweet</a><div data-size="medium" data-annotation="bubble" data-width="300" class="g-plusone"></div><a href="http://news.ycombinator.com/submit" class="hn-share-button">Vote on HN</a></div><!-- Disqus comments, Make sure to replace `colinwren` with your account name in the Disqus helper script below--><div id="comments"><div id="disqus_thread"></div></div><!-- Helper scripts for social share icons--><!-- Hacker News--><script type="text/javascript">(function(d, t) {
+  var g = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+  g.src = '//hnbutton.appspot.com/static/hn.min.js';
+  s.parentNode.insertBefore(g, s);
+}(document, 'script'));
+</script><!-- Twitter--><script type="text/javascript">!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script><!-- Google Plus--><script type="text/javascript">(function() {
+  var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+  po.src = 'https://apis.google.com/js/plusone.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script><!-- Disqus--><script type="text/javascript">var disqus_shortname = 'colinwren'; // Change this to your Disqus account name
+
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script></div></div><footer><div class="footer-inner"><div id="map"></div><div class="end"><h3>Learn. Hack. Build.</h3></div></div></footer><script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" type="text/javascript"></script><script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script><script src="/scripts/main.js" type="text/javascript"></script></body></html>
